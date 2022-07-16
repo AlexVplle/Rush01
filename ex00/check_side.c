@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   check_side.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 10:19:00 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/16 17:46:11 by avapaill         ###   ########.fr       */
+/*   Created: 2022/07/16 19:08:44 by avapaill          #+#    #+#             */
+/*   Updated: 2022/07/16 19:08:54 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_side_zero(int **result, int line, int condition, int length)
 {
@@ -103,32 +101,4 @@ int	ft_side_three(int **result, int line, int condition, int length)
 	if (condition == box)
 		return (1);
 	return (0);
-}
-
-int	ft_check_condition(int **result, int conditions[], int number_conditions)
-{
-	int	i;
-	int	good;
-	int	side;
-	int	line;
-	int	length;
-
-	i = 0;
-	good = 1;
-	length = number_conditions / 4;
-	while (i < number_conditions && good)
-	{
-		side = i / 4;
-		line = i % 4;
-		if (side == 0)
-			good = ft_side_zero(result, line, conditions[i], length);
-		else if (side == 1)
-			good = ft_side_one(result, line, conditions[i], length);
-		else if (side == 2)
-			good = ft_side_two(result, line, conditions[i], length);
-		else
-			good = ft_side_three(result, line, conditions[i], length);
-		i++;
-	}
-	return (good);
 }
