@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 10:19:00 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/16 14:59:39 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/16 15:35:19 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	ft_side_three(int result[][], int line, int condition, int length)
 	return (0);
 }
 
-int	ft_check_condition(int result[][], int conditions[], int number_of_conditions)
+int	ft_check_condition(int result[][], int conditions[], int number_conditions)
 {
 	int	i;
 	int	good;
@@ -114,8 +114,8 @@ int	ft_check_condition(int result[][], int conditions[], int number_of_condition
 
 	i = 0;
 	good = 1;
-	length = number_of_conditions / 4;
-	while (i < number_of_conditions && good)
+	length = number_conditions / 4;
+	while (i < number_conditions && good)
 	{
 		side = i / 4;
 		line = i % 4;
@@ -129,17 +129,3 @@ int	ft_check_condition(int result[][], int conditions[], int number_of_condition
 			good = ft_side_three(result, line, conditions[i], length);
 		i++;
 	}
-	return (good);
-}
-
-//int	ft_find_sqrt(int n)
-//{
-
-//}
-
-int	main(void)
-{
-	int	conditions[16] = { 4, 3, 2, 1, 1, 2, 2, 2, 4, 3, 2, 1, 1, 2, 2, 2};
-	int result[4][4] = {{1,2,3,4},{2,3,4,1},{3,4,1,2},{4,1,2,3}};
-	printf("%d", ft_check_condition(result, conditions, 16));
-}
