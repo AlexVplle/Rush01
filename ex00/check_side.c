@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 19:08:44 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/16 19:08:54 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/16 23:27:22 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_side_zero(int **result, int line, int condition, int length)
 			box++;
 			highest_value = result[i][line];
 		}
-
 		i++;
 	}
 	if (condition == box)

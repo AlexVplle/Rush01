@@ -6,7 +6,7 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:33:32 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/16 19:10:49 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/16 23:27:07 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,25 @@ int	ft_check_condition(int **result, int conditions[], int number_conditions)
 		i++;
 	}
 	return (good);
+}
+
+int	ft_check_duplicate(int **result, int line, int length)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < length)
+	{
+		j = 0;
+		while (j < line)
+		{
+			if (result[line][i] == result[j][i])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
