@@ -6,12 +6,16 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:33:32 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/16 23:27:07 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/17 11:40:47 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+int ft_side_zero(int **result, int line, int condition, int length);
+int ft_side_one(int **result, int line, int condition, int length);
+int ft_side_two(int **result, int line, int condition, int length);
+int ft_side_three(int **result, int line, int condition, int length);
 int	*ft_add_entry(int *table, char *str);
 int	**ft_create_table(int **table);
 int	ft_verif_entry(char **argv);
@@ -100,23 +104,28 @@ int	ft_check_condition(int **result, int conditions[], int number_conditions)
 	return (good);
 }
 
-int	ft_check_duplicate(int **result, int line, int length)
+int	ft_check_duplicate(int **result, int length)
 {
 	int	i;
 	int	j;
+	int	line;
 
-	i = 0;
-	j = 0;
-	while (i < length)
+	line = 0;
+	while (line < 4)
 	{
-		j = 0;
-		while (j < line)
+		i = 0;
+		while (i < length)
 		{
-			if (result[line][i] == result[j][i])
-				return (1);
-			j++;
+			j = 0;
+			while (j < line)
+			{
+				if (result[line][i] == result[j][i])
+					return (1);
+				j++;
+			}
+			i++;
 		}
-		i++;
+		line++;
 	}
 	return (0);
 }
