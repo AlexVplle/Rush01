@@ -6,15 +6,17 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 10:05:07 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/17 14:43:56 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/17 16:24:50 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 int	**ft_possibilities(void);
-int	**ft_possible_start(int **permutations);
-int	**ft_possible_end(int **permutations);
+int	**ft_possible_one(int **permutations);
+int	**ft_possible_second(int **permutations);
+int	**ft_possible_third(int **permutations);
+int	**ft_possible_forth(int **permutations);
 
 int	**ft_possibilities(void)
 {
@@ -148,24 +150,5 @@ int	**ft_possible_forth(int **permutations)
 	permutations[23][1] = 1;
 	permutations[23][2] = 3;
 	permutations[23][3] = 2;
-	return (permutations);
-}
-
-int	**ft_possibilities(void)
-{
-	int	i;
-	int	**permutations;
-
-	permutations = malloc(24 * sizeof(*permutations));
-	i = 0;
-	while (i < 24)
-	{
-		permutations[i] = malloc(4 * sizeof(int));
-		i++;
-	}
-	permutations = ft_possible_one(permutations);
-	permutations = ft_possible_second(permutations);
-	permutations = ft_possible_third(permutations);
-	permutations = ft_possible_forth(permutations);
 	return (permutations);
 }

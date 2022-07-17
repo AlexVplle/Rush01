@@ -6,28 +6,29 @@
 /*   By: avapaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 15:33:32 by avapaill          #+#    #+#             */
-/*   Updated: 2022/07/17 11:40:47 by avapaill         ###   ########.fr       */
+/*   Updated: 2022/07/17 17:36:33 by avapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int ft_side_zero(int **result, int line, int condition, int length);
-int ft_side_one(int **result, int line, int condition, int length);
-int ft_side_two(int **result, int line, int condition, int length);
-int ft_side_three(int **result, int line, int condition, int length);
-int	*ft_add_entry(int *table, char *str);
-int	**ft_create_table(int **table);
+int	ft_side_zero(int **result, int line, int condition, int length);
+int	ft_side_one(int **result, int line, int condition, int length);
+int	ft_side_two(int **result, int line, int condition, int length);
+int	ft_side_three(int **result, int line, int condition, int length);
+int	*ft_add_entry(char *str);
+int	**ft_create_table(void);
 int	ft_verif_entry(char **argv);
 
-int	*ft_add_entry(int *table, char *str)
+int	*ft_add_entry(char *str)
 {
 	int	i;
 	int	nb;
+	int	*table;
 
 	i = 0;
 	nb = 0;
-	table = malloc(16 * sizeof(int));
+	table = malloc(17 * sizeof(int));
 	while (str[i] != '\0')
 	{
 		if (str[i] >= '1' && str[i] <= '4')
@@ -40,12 +41,13 @@ int	*ft_add_entry(int *table, char *str)
 	return (table);
 }
 
-int	**ft_create_table(int **table)
+int	**ft_create_table(void)
 {
 	int	i;
+	int	**table;
 
 	i = 0;
-	table = malloc(4 * sizeof(int));
+	table = malloc(5 * sizeof(int));
 	while (!table)
 		table = malloc(4 * sizeof(int));
 	while (i < 4)
